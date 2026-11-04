@@ -1,6 +1,9 @@
 # CAIS website prototype v0.2
 
-Local static prototype for the internal CAIS review. It is approximately 80% representative of the intended website experience; remaining gaps are approved content, media rights, final admissions data and the production backend/CMS.
+Public static prototype for the CAIS client review. It is approximately 80% representative of the intended website experience; remaining gaps are approved content, media rights, final admissions data and the production backend/CMS.
+
+- Clean public preview: `https://neonzoul.github.io/lhw004-cais_website/`
+- Public presenter: `https://neonzoul.github.io/lhw004-cais_website/presenter.html`
 
 ## Open locally
 
@@ -30,6 +33,6 @@ Read `CONTENT_REQUESTS.md`, `PRESENTATION_NOTES.md` and `SOURCE_EVIDENCE.md` bef
 
 ## Publication status
 
-This repository is for **internal review**. Supplied CAIS media remains pending publication approval.
+Mos authorized a public client-review deployment on 4 November 2026. This is a **prototype for review**, not the production school website. Supplied CAIS media and factual placeholders still require the school's final confirmation before production use.
 
-The GitHub Pages workflow is prepared as `workflow_dispatch` only. Pushing to `main` does not deploy the site; Mos must explicitly approve public publication before anyone runs the workflow, enables Pages or changes repository visibility.
+GitHub Pages deploys through the manual `workflow_dispatch` workflow. Pushing to `main` alone does not change the public prototype.

@@ -1,6 +1,6 @@
 # CAIS prototype v0.2 — presentation notes
 
-Observed version: 2026-11-04 internal revision  
+Observed version: 2026-11-04 public client-review revision  
 Audience: Mos + พี่น้ำเย็น  
 Purpose: review a near-real website experience while keeping assumptions and production notes separate.
 
@@ -29,4 +29,4 @@ Purpose: review a near-real website experience while keeping assumptions and pro
 5. Choose the primary CTA: Book a visit or Ask Admissions.
 6. Confirm the first real event/announcement and initial Article owner.
 
-Do not send the prototype to the school or publish it publicly until Mos or พี่น้ำเย็น approves the review version.
+This public prototype is authorized for client review. It remains a prototype: the school must confirm factual content, admissions details, people, partners and publication rights before production use.
