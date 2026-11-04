@@ -1,8 +1,8 @@
 name: Deploy static site to GitHub Pages
 
 on:
-  push:
-    branches: [main]
+  # Deliberately manual-only during internal review. Do not add a push trigger
+  # until Mos explicitly approves public publication.
   workflow_dispatch:
 
 permissions:

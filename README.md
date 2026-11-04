@@ -30,4 +30,6 @@ Read `CONTENT_REQUESTS.md`, `PRESENTATION_NOTES.md` and `SOURCE_EVIDENCE.md` bef
 
 ## Publication status
 
-GitHub Pages workflow is prepared but must not be pushed or enabled until Mos explicitly approves public release.
+This repository is for **internal review**. Supplied CAIS media remains pending publication approval.
+
+The GitHub Pages workflow is prepared as `workflow_dispatch` only. Pushing to `main` does not deploy the site; Mos must explicitly approve public publication before anyone runs the workflow, enables Pages or changes repository visibility.
