@@ -57,6 +57,6 @@ See `CONTENT_REQUESTS.md` and `PRODUCTION_RELEASE_CHECKLIST.md` for the short op
 
 ## Git status
 
-Local commit SHA: pending final independent audit and local commit.
+Local implementation commit: `c77db7d` (`feat: elevate CAIS content and parent experience`).
 
 Public deployment: unchanged by this revision.
