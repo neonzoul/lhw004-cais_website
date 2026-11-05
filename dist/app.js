@@ -1,92 +1,98 @@
-const pages = [...document.querySelectorAll('[data-page]')];
-const routeLinks = [...document.querySelectorAll('[data-route]')];
 const menuButton = document.querySelector('.menu-button');
 const siteNav = document.querySelector('.site-nav');
-const form = document.querySelector('#prototype-form');
+const pageName = document.body.dataset.page;
 
-// Replace or reorder these objects to maintain the Home event/announcement slideshow.
-// All current entries are explicit placeholders; no past event is represented as upcoming.
-const eventItems = [
-  {
-    type: 'Event placeholder',
-    title: 'Upcoming school event',
-    meta: ['Date to be confirmed', 'Time to be confirmed', 'School location'],
-    summary: 'Replace this card with the next approved school event, registration details and a current photograph.',
-    image: 'assets/community-team.jpg',
-    alt: 'CAIS school community reference image',
-  },
-  {
-    type: 'Announcement placeholder',
-    title: 'Latest school announcement',
-    meta: ['School approval required', 'Publish date required'],
-    summary: 'Use this space for a concise update that families need to see quickly, with a clear owner and date.',
-    image: 'assets/learning-together.jpg',
-    alt: 'Children learning together reference image',
-  },
-  {
-    type: 'Calendar placeholder',
-    title: 'A highlight from school life',
-    meta: ['Real activity required', 'Educator context required'],
-    summary: 'Share one verified learning moment and explain what children experienced—not only what happened.',
-    image: 'assets/nature-art.jpg',
-    alt: 'Nature-inspired art reference image',
-  },
-];
+document.querySelectorAll('[data-nav]').forEach((link) => {
+  if (link.dataset.nav === pageName) link.setAttribute('aria-current', 'page');
+});
 
-const presentationNotes = {
-  journey: {
-    title: 'The parent journey shapes the page order',
-    body: '<p><strong>Start with your question. Move at your pace.</strong> is a presentation principle, not website copy. The live experience supports four needs: discover CAIS, assess fit, build trust and contact the school.</p>',
+if (menuButton && siteNav) {
+  menuButton.addEventListener('click', () => {
+    const open = siteNav.classList.toggle('is-open');
+    menuButton.setAttribute('aria-expanded', String(open));
+  });
+  document.addEventListener('click', (event) => {
+    if (!siteNav.contains(event.target) && !menuButton.contains(event.target)) {
+      siteNav.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      siteNav.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+const reveals = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px' });
+  reveals.forEach((item) => revealObserver.observe(item));
+} else {
+  reveals.forEach((item) => item.classList.add('is-visible'));
+}
+
+const notes = {
+  positioning: {
+    title: 'Hypothesis 01 · clarity before poetry',
+    body: '<p>If parents can identify the school type, age range, curriculum, location and next step in five seconds, more qualified families will continue exploring. The emotional promise remains, but decision facts now sit beside it.</p>',
+  },
+  'value-proof': {
+    title: 'Hypothesis 02 · value → practice → parent meaning',
+    body: '<p>Generic words such as “holistic” or “nature-connected” become credible only when paired with what a child actually does and what that experience develops. Each pillar now links to a visible practice and a deeper page.</p>',
+  },
+  video: {
+    title: 'Hypothesis 03 · help parents imagine their child here',
+    body: '<p>Real classroom movement, sound and interaction reduce the distance between a claim and a felt experience. The review build links to existing CAIS video; production should host an approved captioned version on the school domain.</p>',
   },
   events: {
-    title: 'Events should stay current without redesign work',
-    body: '<p>The slideshow is driven by one editable JavaScript list. Current cards are labelled placeholders; the past July event is not presented as upcoming.</p>',
-  },
-  purpose: {
-    title: 'Vision and mission need school-owned wording',
-    body: '<p>The structure is ready, while the wording remains visibly provisional. Before launch, CAIS should approve the exact vision, mission and educational philosophy.</p>',
-  },
-  learning: {
-    title: 'Learning is explained as a progression',
-    body: '<p>Belong → Explore → Grow gives families a simple model. Official EYFS or curriculum terminology, age bands and assessment language must be confirmed before publication.</p>',
-  },
-  partners: {
-    title: 'Outdoor partnerships require evidence',
-    body: '<p>No partner is invented. Publish only approved organisations with the purpose of the activity, safeguarding approach, educator context and current evidence.</p>',
-  },
-  publishing: {
-    title: 'School-owned publishing workflow',
-    body: '<p><strong>Write → School review → Publish → Keep current.</strong> The final system should let the school edit pages and publish Articles without depending on a developer for every update.</p>',
+    title: 'Hypothesis 04 · currentness after understanding',
+    body: '<p>Events appear after the school philosophy and lived experience are clear. At this point, one current update makes CAIS feel active and gives returning families a reason to revisit—without interrupting a new parent’s first five-minute journey.</p>',
   },
 };
 
+const eventItems = [
+  {
+    type: 'Upcoming event · details to confirm',
+    title: 'A welcoming reason to visit CAIS',
+    meta: 'Date and registration details from the school',
+    summary: 'Use the lead slide for the next open morning, family activity or important school date. Keep one clear action and remove it when it is no longer current.',
+    image: 'assets/parent-community.jpg',
+    alt: 'CAIS families and team sharing a community moment',
+  },
+  {
+    type: 'School-life story · publish date to confirm',
+    title: 'Learning grows through shared experience',
+    meta: 'One real moment · one learning purpose',
+    summary: 'A short story can show what children noticed, made or learned—turning an activity update into useful evidence of the school approach.',
+    image: 'assets/classroom-roleplay.jpg',
+    alt: 'CAIS children taking part in a classroom role-play activity',
+  },
+  {
+    type: 'Family announcement · content to confirm',
+    title: 'The update families need next',
+    meta: 'Current information · clear owner · clear next step',
+    summary: 'Reserve this position for a timely notice, calendar highlight or invitation. The production CMS should make updates simple for the school team.',
+    image: 'assets/nature-collage.jpg',
+    alt: 'CAIS children creating with natural materials',
+  },
+];
+
 let eventIndex = 0;
-
-function normaliseRoute(value) {
-  const route = (value || 'home').replace(/^#/, '').split('?')[0];
-  return pages.some((page) => page.dataset.page === route) ? route : 'home';
-}
-
-function showRoute(routeValue, scroll = true) {
-  const route = normaliseRoute(routeValue);
-  pages.forEach((page) => page.classList.toggle('is-active', page.dataset.page === route));
-  routeLinks.forEach((link) => {
-    const isActive = link.dataset.route === route;
-    link.classList.toggle('is-active', isActive);
-    if (isActive) link.setAttribute('aria-current', 'page');
-    else link.removeAttribute('aria-current');
-  });
-  siteNav.classList.remove('is-open');
-  menuButton.setAttribute('aria-expanded', 'false');
-  document.title = `${route === 'home' ? 'Celestia Andaman International School' : route.replace('-', ' ')} · CAIS Prototype Review`;
-  if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
-}
 
 function renderEvents() {
   const stage = document.querySelector('.event-stage');
   const dots = document.querySelector('.event-dots');
+  if (!stage || !dots) return;
   const item = eventItems[eventIndex];
-  stage.innerHTML = `<article class="event-card"><img src="${item.image}" alt="${item.alt}"><div class="event-copy"><small>${item.type}</small><h3>${item.title}</h3><div class="event-meta">${item.meta.map((value) => `<span>${value}</span>`).join('')}</div><p>${item.summary}</p><span class="content-status">Sample content · replace before publication</span></div></article>`;
+  stage.innerHTML = `<article class="event-card"><div class="event-image"><img src="${item.image}" alt="${item.alt}"></div><div class="event-copy"><small>${item.type}</small><h3>${item.title}</h3><b>${item.meta}</b><p>${item.summary}</p><span class="content-status">Prototype content · replace with the latest approved update</span></div></article>`;
   dots.innerHTML = eventItems.map((event, index) => `<button class="event-dot" type="button" data-event-index="${index}" aria-label="Show ${event.title}" aria-pressed="${index === eventIndex}"></button>`).join('');
   dots.querySelectorAll('[data-event-index]').forEach((button) => button.addEventListener('click', () => {
     eventIndex = Number(button.dataset.eventIndex);
@@ -105,50 +111,53 @@ function setupPresentationMode() {
   const dock = document.querySelector('.review-dock');
   const toggle = document.querySelector('.review-toggle');
   const dialog = document.querySelector('.note-dialog');
-  const close = document.querySelector('.dialog-close');
+  if (!dock || !toggle || !dialog) return;
   dock.hidden = false;
   document.body.classList.add('presentation-mode');
-
   toggle.addEventListener('click', () => {
     const enabled = document.body.classList.toggle('presentation-mode');
     toggle.setAttribute('aria-pressed', String(enabled));
-    toggle.textContent = `Presentation notes: ${enabled ? 'on' : 'off'}`;
+    toggle.textContent = 'Notes: ' + (enabled ? 'on' : 'off');
     if (!enabled && dialog.open) dialog.close();
   });
-
   document.querySelectorAll('[data-note]').forEach((pin) => pin.addEventListener('click', () => {
-    const note = presentationNotes[pin.dataset.note];
+    const note = notes[pin.dataset.note];
     document.querySelector('#note-title').textContent = note.title;
     document.querySelector('#note-body').innerHTML = note.body;
     dialog.showModal();
   }));
-  close.addEventListener('click', () => dialog.close());
+  dialog.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', (event) => {
     if (event.target === dialog) dialog.close();
   });
 }
 
-window.addEventListener('hashchange', () => showRoute(location.hash));
-routeLinks.forEach((link) => link.addEventListener('click', () => {
-  const route = link.dataset.route;
-  if (location.hash === `#${route}`) showRoute(route);
-}));
+const galleryDialog = document.querySelector('.gallery-dialog');
+if (galleryDialog) {
+  const dialogImage = galleryDialog.querySelector('img');
+  const dialogCaption = galleryDialog.querySelector('p');
+  document.querySelectorAll('.gallery-item').forEach((item) => item.addEventListener('click', () => {
+    const sourceImage = item.querySelector('img');
+    dialogImage.src = sourceImage.src;
+    dialogImage.alt = sourceImage.alt;
+    dialogCaption.textContent = item.dataset.caption || sourceImage.alt;
+    galleryDialog.showModal();
+  }));
+  galleryDialog.querySelector('.dialog-close')?.addEventListener('click', () => galleryDialog.close());
+  galleryDialog.addEventListener('click', (event) => {
+    if (event.target === galleryDialog) galleryDialog.close();
+  });
+}
 
-menuButton.addEventListener('click', () => {
-  const open = siteNav.classList.toggle('is-open');
-  menuButton.setAttribute('aria-expanded', String(open));
-});
-
-document.querySelector('[data-event-prev]').addEventListener('click', () => changeEvent(-1));
-document.querySelector('[data-event-next]').addEventListener('click', () => changeEvent(1));
-
-form.addEventListener('submit', (event) => {
+document.querySelectorAll('.enquiry-form').forEach((form) => form.addEventListener('submit', (event) => {
   event.preventDefault();
   const result = form.querySelector('.form-result');
   result.hidden = false;
   result.focus();
-});
+}));
+
+document.querySelector('[data-event-prev]')?.addEventListener('click', () => changeEvent(-1));
+document.querySelector('[data-event-next]')?.addEventListener('click', () => changeEvent(1));
 
 renderEvents();
 setupPresentationMode();
-showRoute(location.hash, false);

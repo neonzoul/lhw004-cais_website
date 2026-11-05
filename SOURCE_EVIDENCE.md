@@ -1,4 +1,4 @@
-# CAIS prototype v0.2 — source and evidence register
+# CAIS prototype v0.3 — source and evidence register
 
 ## Durable sources
 
@@ -32,3 +32,39 @@ All images came from the project `assets/` folder. They remain visibly labelled 
 - No accreditation, ranking, review, performance, enrolment or traffic result is claimed.
 - No official curriculum/age map or application process is implied.
 - No permission to publish supplied child photographs externally is assumed.
+
+## 5 November 2026 research update
+
+### Current CAIS public facts used in the review build
+
+- [Current CAIS website](https://caisphuket.com/) — British curriculum, ages 2–7, EYFS stages, KS1 stages, public vision/mission, three learning pillars, founder names, phone and email.
+- [CAIS Facebook](https://www.facebook.com/CAISPhuket) — public school identity and activity context. Social activity was used as direction, not as proof of a permanent programme.
+
+### Search and AI discovery guidance
+
+- [Google: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) — existing SEO fundamentals apply to AI features.
+- [Google: SEO and AI optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) — useful, original, people-first content remains central.
+- [Google: Organization structured data](https://developers.google.com/search/docs/appearance/structured-data/organization) — entity information and valid visible facts.
+- [Google: FAQ and HowTo changes](https://developers.google.com/search/blog/2023/08/howto-faq-changes) — visible FAQs remain useful, but FAQ rich results are limited and are not promised here.
+
+### Early-years article references
+
+- [GOV.UK: Early years foundation stage](https://www.gov.uk/early-years-foundation-stage)
+- [Department for Education: EYFS statutory framework](https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2)
+- [Department for Education: core strength and coordination](https://help-for-early-years-providers.education.gov.uk/areas-of-learning/physical-development/core-strength-and-co-ordination)
+
+### Parent-choice and competitor references
+
+- [Bamboo Valley Phuket](https://bamboovalleyphuket.com/en/)
+- [Lighthouse International Kindergarten](https://kindergartenphuket.com/)
+- [Little Lions Phuket](https://littlelionsphuket.com/)
+- [International School of Phuket](https://ispphuket.com/)
+
+These sites were audited for decision information and parent journey patterns, not copied for visual or editorial content.
+
+## Known discrepancies and gates
+
+- The client record says `11 Moo 8, Thep Krasatti, Thalang, Phuket 83110`; one third-party directory lists a different street number. Production requires school confirmation.
+- The map reference supplied in earlier material pointed to QSI International School. It is not used. The review Contact page uses a provisional coordinate and labels it clearly.
+- The current CAIS site lists `+66 93 594 5835`; an earlier prototype used another number. Production requires confirmation.
+- Supplied media is suitable for design review only until the school confirms publication rights.

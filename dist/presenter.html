@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CAIS Prototype v0.2 Presenter</title>
+  <meta name="robots" content="noindex,nofollow">
+  <title>CAIS Prototype v0.3 Presenter</title>
   <link rel="icon" href="data:,">
   <style>
     :root{color-scheme:dark;font-family:"Segoe UI",Arial,sans-serif;background:#091a33;color:#fff}*{box-sizing:border-box}body{margin:0}.bar{height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 22px;background:#091a33;border-bottom:1px solid rgba(255,255,255,.12)}.title b{display:block}.title span{font-size:12px;opacity:.65}.controls{display:flex;gap:8px}.controls button,.controls a{padding:9px 14px;border:1px solid rgba(255,255,255,.25);border-radius:999px;color:#fff;background:transparent;text-decoration:none;cursor:pointer}.controls button.active{color:#091a33;background:#f5b72f;border-color:#f5b72f}.stage{height:calc(100vh - 66px);display:grid;place-items:center;padding:18px;background:#12294a}.frame{width:min(1440px,100%);height:100%;overflow:hidden;border-radius:16px;background:#fff;box-shadow:0 30px 90px rgba(0,0,0,.35);transition:width .3s ease}.frame.mobile{width:390px;max-height:844px;border-radius:28px}iframe{width:100%;height:100%;border:0;background:#fff}@media(max-width:700px){.title span{display:none}.bar{padding:0 12px}.controls a{display:none}.controls button{padding:8px 10px}.stage{padding:8px}.frame.mobile{width:100%;border-radius:16px}}
   </style>
 </head>
 <body>
-  <header class="bar"><div class="title"><b>CAIS Prototype v0.2</b><span>Preview + presentation notes · internal review</span></div><div class="controls"><button class="active" data-view="desktop">Desktop</button><button data-view="mobile">Mobile</button><a href="index.html?presentation=1#home" target="_blank" rel="noopener">Open review ↗</a></div></header>
-  <main class="stage"><div class="frame" id="frame"><iframe src="index.html?presentation=1#home" title="CAIS website prototype"></iframe></div></main>
+  <header class="bar"><div class="title"><b>CAIS Prototype v0.3</b><span>Content, UX and AI-discovery review</span></div><div class="controls"><button class="active" data-view="desktop">Desktop</button><button data-view="mobile">Mobile</button><a href="index.html?presentation=1" target="_blank" rel="noopener">Open review ↗</a></div></header>
+  <main class="stage"><div class="frame" id="frame"><iframe src="index.html?presentation=1" title="CAIS website prototype"></iframe></div></main>
   <script>const frame=document.querySelector('#frame');document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-view]').forEach(item=>item.classList.remove('active'));button.classList.add('active');frame.classList.toggle('mobile',button.dataset.view==='mobile')}));</script>
 </body>
 </html>

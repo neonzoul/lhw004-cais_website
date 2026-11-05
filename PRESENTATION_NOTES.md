@@ -1,32 +1,38 @@
-# CAIS prototype v0.2 — presentation notes
+# CAIS prototype v0.3 — presentation notes
 
-Observed version: 2026-11-04 public client-review revision  
-Audience: Mos + พี่น้ำเย็น  
-Purpose: review a near-real website experience while keeping assumptions and production notes separate.
+Observed version: 5 November 2026 public client-review revision
+
+Audience: Mos + agency partner + CAIS decision-makers
+
+Purpose: review the content, parent decision journey and visual direction while keeping hypotheses and production gates explicit.
 
 ## Two viewing modes
 
-- **Preview:** `dist/index.html#home` — clean visitor-facing website. No internal labels, prototype bar or review pins.
-- **Presentation:** `dist/presenter.html` — desktop/mobile frame plus numbered annotation pins. The bottom control turns all notes on or off.
+- **Preview:** `dist/index.html` — clean visitor-facing website. No internal note pins.
+- **Presentation:** `dist/presenter.html` — desktop/mobile frame plus three numbered hypothesis pins. The bottom control turns notes on or off.
 
-## Suggested walkthrough
+## Suggested 12-minute review
 
-1. Home: show the main family message and four visitor paths.
-2. Events: use next/previous and dot controls; explain that all three entries are placeholders driven by one editable list.
-3. Why CAIS: review Vision, Mission and Management Team structure without invented people.
-4. Curriculum & Age: show Belong → Explore → Grow and the honest age/stage content gap.
-5. School Life: show Outdoor Learning Partnerships without inventing partner names.
-6. Articles: open note 6 to explain the school-owned publishing workflow.
-7. Toggle presentation notes off to show the clean website.
-8. Switch the Presenter to Mobile and repeat Home → Events → Contact.
+1. **Homepage (3 min):** can a new parent identify school type, ages, curriculum, location and next step without explanation?
+2. **Why CAIS + Curriculum (3 min):** do the promises match real school practice and official wording?
+3. **School Life + first Article (3 min):** does the evidence feel recognisably CAIS, and can an educator stand behind it?
+4. **Admissions + Contact (3 min):** confirm the real parent workflow, address/map, response owner and required form fields.
 
-## Decisions needed
+Review the hypotheses in `RESEARCH_AND_HYPOTHESES.md`, then record disagreements at the hypothesis level. This makes revision faster than debating individual sentences in isolation.
 
-1. Approve or replace the proposed Vision and Mission direction.
-2. Confirm official curriculum terminology and age-to-class mapping.
-3. Confirm leadership names, roles, biographies and portraits.
-4. Name any approved outdoor/community partners and evidence that may be published.
-5. Choose the primary CTA: Book a visit or Ask Admissions.
-6. Confirm the first real event/announcement and initial Article owner.
+## Three homepage hypotheses
 
-This public prototype is authorized for client review. It remains a prototype: the school must confirm factual content, admissions details, people, partners and publication rights before production use.
+1. **Clarity before poetry:** decision facts should be available within five seconds.
+2. **Value → practice → parent meaning:** every broad promise needs an observable child experience.
+3. **Help parents picture their child here:** real media and real interaction reduce uncertainty before a visit.
+
+## Decisions needed before production
+
+1. Confirm or amend the positioning direction, especially Thai culture and mindfulness.
+2. Confirm official curriculum terminology, age/cutoff map, hours and term information.
+3. Confirm leadership roles, biographies and portraits.
+4. Confirm the exact contact details, map pin, enquiry owner and privacy workflow.
+5. Confirm publication permission for every child/staff image and video.
+6. Ask an educator to sign off the Curriculum page and first article.
+
+This public prototype is authorized for client review and intentionally blocked from search indexing. It is not the production school website.
