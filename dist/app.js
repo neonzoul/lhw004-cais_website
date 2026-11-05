@@ -60,26 +60,44 @@ const notes = {
 
 const eventItems = [
   {
-    type: 'Upcoming event · details to confirm',
-    title: 'A welcoming reason to visit CAIS',
-    meta: 'Date and registration details from the school',
-    summary: 'Use the lead slide for the next open morning, family activity or important school date. Keep one clear action and remove it when it is no longer current.',
-    image: 'assets/parent-community.jpg',
-    alt: 'CAIS families and team sharing a community moment',
+    type: 'Past event · content model',
+    title: 'Open House #3 · Beachside Edition',
+    date: '18 July 2026',
+    time: '10:00 AM–12:00 PM',
+    location: 'Dusit Thani Laguna Phuket · Bang Tao Beach',
+    summary: 'A beachside open house with a mini art exhibition, an exclusive offer and a lucky draw for one scholarship award.',
+    highlight: 'Special highlight · Mini Art Exhibition',
+    action: 'See how event registration works',
+    href: 'contact/',
+    status: 'Past-event reference · replace with the next approved event',
+    image: 'assets/open-house-3-event.png',
+    alt: 'CAIS Open House number 3 Beachside Edition poster from 18 July 2026',
   },
   {
     type: 'School-life story · publish date to confirm',
     title: 'Learning grows through shared experience',
-    meta: 'One real moment · one learning purpose',
+    date: 'Publish date to confirm',
+    time: 'One real moment',
+    location: 'CAIS learning community',
     summary: 'A short story can show what children noticed, made or learned—turning an activity update into useful evidence of the school approach.',
+    highlight: 'One activity · one learning purpose',
+    action: 'Explore school life',
+    href: 'school-life/',
+    status: 'Prototype content · replace with an approved school story',
     image: 'assets/classroom-roleplay.jpg',
     alt: 'CAIS children taking part in a classroom role-play activity',
   },
   {
     type: 'Family announcement · content to confirm',
     title: 'The update families need next',
-    meta: 'Current information · clear owner · clear next step',
+    date: 'Publish and expiry dates required',
+    time: 'Time, if relevant',
+    location: 'Location or online',
     summary: 'Reserve this position for a timely notice, calendar highlight or invitation. The production CMS should make updates simple for the school team.',
+    highlight: 'Current information · clear next step',
+    action: 'Ask the school',
+    href: 'contact/',
+    status: 'Prototype content · replace with the latest approved notice',
     image: 'assets/nature-collage.jpg',
     alt: 'CAIS children creating with natural materials',
   },
@@ -92,7 +110,7 @@ function renderEvents() {
   const dots = document.querySelector('.event-dots');
   if (!stage || !dots) return;
   const item = eventItems[eventIndex];
-  stage.innerHTML = `<article class="event-card"><div class="event-image"><img src="${item.image}" alt="${item.alt}"></div><div class="event-copy"><small>${item.type}</small><h3>${item.title}</h3><b>${item.meta}</b><p>${item.summary}</p><span class="content-status">Prototype content · replace with the latest approved update</span></div></article>`;
+  stage.innerHTML = `<article class="event-card"><div class="event-image"><img src="${item.image}" alt="${item.alt}"></div><div class="event-copy"><small>${item.type}</small><h3>${item.title}</h3><dl class="event-details"><div><dt>Date</dt><dd>${item.date}</dd></div><div><dt>Time</dt><dd>${item.time}</dd></div><div><dt>Location</dt><dd>${item.location}</dd></div></dl><p>${item.summary}</p><p class="event-highlight">${item.highlight}</p><a class="event-action" href="${item.href}">${item.action} <span aria-hidden="true">→</span></a><span class="content-status">${item.status}</span></div></article>`;
   dots.innerHTML = eventItems.map((event, index) => `<button class="event-dot" type="button" data-event-index="${index}" aria-label="Show ${event.title}" aria-pressed="${index === eventIndex}"></button>`).join('');
   dots.querySelectorAll('[data-event-index]').forEach((button) => button.addEventListener('click', () => {
     eventIndex = Number(button.dataset.eventIndex);
