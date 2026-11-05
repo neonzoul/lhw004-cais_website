@@ -26,6 +26,8 @@ button, input, textarea { font: inherit; }
 
 .prototype-bar { min-height: 34px; display: flex; align-items: center; justify-content: center; gap: 16px; padding: 7px 20px; color: #fff; background: var(--navy-deep); font-size: 12px; letter-spacing: .03em; text-align: center; }
 .prototype-bar span { opacity: .72; }
+.public-review-banner { min-height: 34px; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 7px 18px; color: #fff; background: var(--navy-deep); font-size: 12px; letter-spacing: .02em; text-align: center; }
+.public-review-banner span { color: rgba(255,255,255,.72); }
 .review-dock { position: fixed; z-index: 80; right: 18px; bottom: 18px; display: flex; align-items: center; gap: 10px; padding: 9px 10px 9px 14px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; color: #fff; background: rgba(10,33,65,.94); box-shadow: 0 14px 40px rgba(10,33,65,.28); font-size: 12px; }
 .review-dock[hidden] { display: none; }
 .review-toggle { padding: 7px 12px; border: 0; border-radius: 999px; color: var(--navy-deep); background: var(--gold); font-weight: 800; cursor: pointer; }
@@ -236,6 +238,7 @@ body.presentation-mode .note-pin { display: grid; place-items: center; }
 }
 
 @media (max-width: 780px) {
+  .public-review-banner { align-items: flex-start; flex-direction: column; gap: 0; padding: 7px 16px; text-align: left; }
   .prototype-bar { align-items: flex-start; gap: 3px; flex-direction: column; padding: 8px 16px; text-align: left; }
   .site-header { height: 70px; grid-template-columns: 1fr auto; padding: 0 18px; }
   .brand img { width: 210px; height: 52px; }

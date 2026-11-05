@@ -1,8 +1,11 @@
 name: Deploy static site to GitHub Pages
 
 on:
-  # Deliberately manual-only during internal review. Do not add a push trigger
-  # until Mos explicitly approves public publication.
+  push:
+    branches: [main]
+    paths:
+      - "dist/**"
+      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -23,6 +26,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist

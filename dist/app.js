@@ -78,7 +78,7 @@ function showRoute(routeValue, scroll = true) {
   });
   siteNav.classList.remove('is-open');
   menuButton.setAttribute('aria-expanded', 'false');
-  document.title = `${route === 'home' ? 'Celestia Andaman International School' : route.replace('-', ' ')} · CAIS Phuket`;
+  document.title = `${route === 'home' ? 'Celestia Andaman International School' : route.replace('-', ' ')} · CAIS Prototype Review`;
   if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 

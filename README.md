@@ -33,6 +33,6 @@ Read `CONTENT_REQUESTS.md`, `PRESENTATION_NOTES.md` and `SOURCE_EVIDENCE.md` bef
 
 ## Publication status
 
-Mos authorized a public client-review deployment on 4 November 2026. This is a **prototype for review**, not the production school website. Supplied CAIS media and factual placeholders still require the school's final confirmation before production use.
+Mos authorized a public client-review deployment. This is a **prototype for review**, not the production school website. Every route displays this status, and supplied CAIS media and factual placeholders still require the school's final confirmation before production use.
 
-GitHub Pages deploys through the manual `workflow_dispatch` workflow. Pushing to `main` alone does not change the public prototype.
+GitHub Pages deploys when reviewed files under `dist/` or the Pages workflow change on `main`; it can also be run manually through `workflow_dispatch`.
